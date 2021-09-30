@@ -1,9 +1,11 @@
 plugins {
     id 'application'
+    id 'com.github.johnrengelman.shadow' version '6.0.0'
 }
 
 group 'eu.koboo'
-version '1.0'
+version '1.0.1'
+mainClassName = 'eu.koboo.pdfsplitter.PDFSplitter'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -17,19 +19,12 @@ dependencies {
     implementation 'org.apache.pdfbox:pdfbox:2.0.24'
 }
 
-mainClassName = 'eu.koboo.pdfsplitter.PDFSplitter'
-
-jar {
-    archiveName = "pdf-splitter.jar"
-    from {
-        configurations.compile.collect {
-            it.isDirectory() ? it : zipTree(it)
-        }
-    }
+shadowJar {
+    archiveBaseName.set('pdf-splitter')
     manifest {
         attributes(
-                'Implementation-Version': project.version,
-                'Main-Class': mainClassName
+                'Main-Class': mainClassName,
+                'Implementation-Version': project.version
         )
     }
 }
