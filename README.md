@@ -14,6 +14,6 @@ PDFSplitter is a minimal application and creates a new PDF file for each page fr
 
 3. Find the artifact located in ``{projectDirectory}/build/libs/``
 
-Or download pre-built binaries from [releases](https://github.com/Koboo/pdf-splitter/releases).
+### Or download pre-built binaries from [releases](https://github.com/Koboo/pdf-splitter/releases).
 
 4. Double-click the ``pdf-splitter-*.jar`` and select a multi-paged *.pdf file to split it in multiple files
